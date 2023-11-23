@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>ChatAPP-023</h1>
+        <h1>Instant Chat</h1>
         <SignOut/>
       </header>
       <section>
