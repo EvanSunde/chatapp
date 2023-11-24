@@ -1,0 +1,26 @@
+.SignInPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #f5f5f5; */
+    background-image: url(https://cdn.discordapp.com/attachments/856059382709354516/1177479826089726042/Elden_ring_1151250.jpg?ex=6572a88b&is=6560338b&hm=45d423e781b0062e1adf1afae3fadc31440628ad0a37ce385fbeba652484ab03&);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff; /* Cyberpunk neon white glow effect */
+
+  }
+  
+  .SignInPage h1 {
+    margin-bottom: 20px;
+  }
+  
+  .SignInPage .note {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #570404;
+  }
+  
