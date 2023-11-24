@@ -46,6 +46,9 @@ function ChatRoom(){
 
     dummy.current.scrollIntoView({ behaviour: 'smooth' });
   };
+    useEffect(() => {
+    dummy.current.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   return (<>
     <main>
