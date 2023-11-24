@@ -1,13 +1,15 @@
 import React, { useRef, useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import firebase from 'firebase/compat/app';
+import firebase from '../firebaseConfig';
 import 'firebase/compat/firestore';
+import { firestore } from '../firebaseConfig';
 import ChatMessage from './ChatMessage';
 import { getAuth } from 'firebase/auth';
+import ImageUpload from './ImageUpload';
+
 
 function ChatRoom(){
   const dummy = useRef();
-  const firestore = firebase.firestore();
   const messageRef = firestore.collection('message')
   const query = messageRef.orderBy('createdAt').limit(30);
   
@@ -31,16 +33,31 @@ function ChatRoom(){
     dummy.current.scrollIntoView({ behaviour:'smooth'});
   };
 
+  const handleImageUpload = async (url) => {
+    const auth = getAuth();
+    const { uid, photoURL } = auth.currentUser;
+
+    await messageRef.add({
+      imageURL: url,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      uid,
+      photoURL,
+    });
+
+    dummy.current.scrollIntoView({ behaviour: 'smooth' });
+  };
+
   return (<>
     <main>
       {message && message.map((msg) => <ChatMessage key={ msg.id} message ={msg}/>)}
       <span ref= {dummy}></span>
-    </main>
-
+    </main>  
+    <ImageUpload onUpload={handleImageUpload} />
     <form onSubmit={sendMessage}>
-      <input value = {formValue} onChange ={(e)=>setFormValue(e.target.value)} placeholder="what? you got something to say?" />
-      <button type='submit'>Send</button>
-    </form>
+  <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="The chat is instant and cannot be deleted :)" />
+  <button type='submit'>Send</button>
+</form>
+
     </>
   )
 }

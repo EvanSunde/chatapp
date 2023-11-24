@@ -7,18 +7,18 @@ body {
   display:flex;
   flex-direction: column;
   height: 100vh;
+  font-family: 'Roboto',sans-serif;
   /* max-width: 728px;
   margin: 0 auto; */
 }
 
 .App header {
-  background-color: #f70000;
+  background-color: #282c34;
   height: 10vh;
   min-height: 50px;
   color: white;
-  position: fixed;
+  position: sticky;
   width: 100%;
-  /* max-width: 728px; */
   top: 0;
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+  background-color: rgb(43, 32, 43);
 }
 
 main {
@@ -81,9 +81,6 @@ form button {
   transition: background-color 0.3s ease;
 }
 
-form button:hover {
-  background-color: #0056b3;
-}
 
 form button:active {
   animation: click 0.2s ease;
@@ -136,8 +133,12 @@ button:disabled {
 .sign-in {
   color: #282c34;
   background: white;
-  max-width: 400px;
+  border: none;
+  border-radius: 30px;
+  /* max-width: 400px; */
   margin: 0 auto;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 
