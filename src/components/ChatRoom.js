@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState,useEffect } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import firebase from '../firebaseConfig';
 import 'firebase/compat/firestore';
@@ -48,7 +48,7 @@ function ChatRoom(){
   };
     useEffect(() => {
     dummy.current.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+  }, [message]);
 
   return (<>
     <main>
