@@ -35,7 +35,7 @@ function ImageUpload({ onUpload }) {
 
   useEffect(() => {
     const handleEsc =(event) => {
-        if (event.keyCode == 27) handleCancel();
+        if (event.keyCode === 27) handleCancel();
     };
     window.addEventListener('keydown', handleEsc);
 

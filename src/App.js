@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebaseConfig';
 import { SignIn, SignOut } from './components/GoogleAuth';
 import ChatRoom from './components/ChatRoom';
+import SignInPage from './components/SignInPage';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -14,7 +15,7 @@ function App() {
         <SignOut/>
       </header>
       <section>
-        {user ? <ChatRoom/> : <SignIn/>}
+        {user ? <ChatRoom/> : <SignInPage/>}
       </section>
     </div>
   );

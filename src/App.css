@@ -34,6 +34,8 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: rgb(43, 32, 43);
+  background-image: url(https://cdn.discordapp.com/attachments/856059382709354516/1177481079398072362/9b4a0bcb58556daca69468a0e9cfc05f.jpg?ex=6572a9b5&is=656034b5&hm=bd75fe62ad172725830d3522321c9ddd42e0d7ff9c06bb252185e8667b56df04&);
+  background-size: cover;
 }
 
 main {
